@@ -22,6 +22,7 @@ export class LeaderBoardComponent {
   get totalDonations(): LeaderBoard[] {
     const totalDonations: LeaderBoard[] = [];
     this.donations.forEach((donation) => {
+      console.log(donation);
       const index = totalDonations.findIndex(
         (totalDonation) => totalDonation.author === donation.author
       );

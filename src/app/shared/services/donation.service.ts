@@ -16,6 +16,9 @@ export class DonationService implements OnDestroy {
   }
 
   handleDonation(message: MessageEvent<any>) {
-    this.donations$.next(message.data);
+    if (message.type == 'message' && message.data.type !== 'webpackOk') {
+      console.log(message);
+      this.donations$.next(message.data);
+    }
   }
 }
